@@ -1,0 +1,60 @@
+:root {
+  /* Brand Palette - Pastel Preppy Country Club */
+  --color-green: #08734B;          /* Country Club Green */
+  --color-green-dark: #07583D;     /* Deep Forest Green */
+  --color-green-sage: #A9C5B7;     /* Sage Green */
+  --color-green-pale: #E0EEE6;     /* Pale Mint */
+  --color-green-tint: rgba(8, 115, 75, 0.08);
+
+  --color-pink: #F4A0C6;           /* Pastel Pink */
+  --color-pink-soft: #FAD9E8;      /* Soft Blush Pink */
+  --color-pink-muted: #D983AC;     /* Muted Pink */
+  --color-pink-tint: rgba(244, 160, 198, 0.15);
+
+  --color-cream: #FAF9F4;          /* Warm Cream page background */
+  --color-cream-card: #FFFFFF;     /* Pure Soft White cards */
+  --color-gray-light: #E8EAE5;     /* Light Gray divider */
+  --color-text-dark: #244438;      /* Primary Dark Text */
+  --color-text-muted: #5B7A6E;     /* Secondary Muted Text */
+  --color-text-light: #89A89C;     /* Subtle Text */
+
+  /* Status Colors */
+  --color-in-stock: #08734B;       /* Country club green */
+  --color-in-stock-bg: #E3F3EC;
+  --color-low-stock: #C86D12;      /* Warm golden amber */
+  --color-low-stock-bg: #FFF4E5;
+  --color-out-stock: #BA334C;      /* Muted rose red */
+  --color-out-stock-bg: #FDE8ED;
+
+  /* Typography */
+  --font-script: 'Parisienne', cursive, serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Borders & Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  --border-green: 1.5px solid #08734B;
+  --border-green-bold: 2.5px solid #08734B;
+  --border-pink: 1.5px solid #F4A0C6;
+  --border-sage: 1.5px solid #A9C5B7;
+  --border-subtle: 1px solid rgba(8, 115, 75, 0.15);
+
+  /* Layered Shadows */
+  --shadow-sm: 0 2px 8px rgba(8, 115, 75, 0.05);
+  --shadow-md: 0 6px 18px rgba(8, 115, 75, 0.08);
+  --shadow-lg: 0 12px 32px rgba(8, 115, 75, 0.12);
+  --shadow-pink: 0 8px 24px rgba(244, 160, 198, 0.3);
+  --shadow-preppy: 4px 4px 0px #08734B;
+  --shadow-preppy-pink: 4px 4px 0px #F4A0C6;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+

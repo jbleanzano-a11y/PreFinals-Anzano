@@ -1,0 +1,288 @@
+@import './variables.css';
+@import './animations.css';
+
+/* Universal Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-dark);
+  background-color: var(--color-cream);
+  /* Reference Image: Delicate Pastel Grid Background */
+  background-image: 
+    linear-gradient(to right, rgba(8, 115, 75, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 115, 75, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-green);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.font-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Preppy Striped Banner / Accents (Directly matching reference image) */
+.preppy-stripes-horizontal {
+  background: repeating-linear-gradient(
+    0deg,
+    var(--color-green) 0px,
+    var(--color-green) 10px,
+    var(--color-pink-soft) 10px,
+    var(--color-pink-soft) 20px,
+    var(--color-green-sage) 20px,
+    var(--color-green-sage) 26px,
+    #ffffff 26px,
+    #ffffff 36px
+  );
+}
+
+.preppy-stripes-pink-cream {
+  background: repeating-linear-gradient(
+    90deg,
+    #ffffff 0px,
+    #ffffff 12px,
+    var(--color-pink-soft) 12px,
+    var(--color-pink-soft) 24px
+  );
+}
+
+.preppy-stripes-green-cream {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-green-pale) 0px,
+    var(--color-green-pale) 14px,
+    #ffffff 14px,
+    #ffffff 28px
+  );
+}
+
+/* Boutique Scalloped Container (Wavy cloud-like border from reference image) */
+.scalloped-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  border: var(--border-green);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.scalloped-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--shadow-preppy);
+}
+
+/* Boutique Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-green);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-green-dark);
+  cursor: pointer;
+  box-shadow: 3px 3px 0px var(--color-pink);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-green-dark);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--color-pink);
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--color-pink);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: var(--color-green);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 22px;
+  border-radius: var(--radius-full);
+  border: var(--border-green);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px rgba(8, 115, 75, 0.15);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-green-pale);
+  border-color: var(--color-green);
+  transform: translateY(-1px);
+}
+
+.btn-pink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-pink);
+  color: var(--color-green-dark);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-green);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--color-green);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-pink:hover {
+  background-color: #f7b4d3;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--color-green);
+}
+
+.btn-pink:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--color-green);
+}
+
+/* Quantity Control Buttons */
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid var(--color-green);
+  color: var(--color-green);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.qty-btn:hover:not(:disabled) {
+  background-color: var(--color-pink-soft);
+  border-color: var(--color-green);
+  color: var(--color-green-dark);
+  transform: scale(1.08);
+}
+
+.qty-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: var(--color-gray-light);
+  color: var(--color-text-light);
+}
+
+/* Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Form inputs */
+.preppy-input {
+  width: 100%;
+  padding: 12px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  background-color: #ffffff;
+  border: 1.5px solid rgba(8, 115, 75, 0.3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.preppy-input:focus {
+  border-color: var(--color-green);
+  box-shadow: 0 0 0 3px rgba(244, 160, 198, 0.45);
+}
+
+.preppy-input::placeholder {
+  color: var(--color-text-light);
+}
+
+/* Scalloped Stamp Shapes & Tags */
+.boutique-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--color-cream);
+  border: 1.5px solid var(--color-green);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-green);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-green-sage);
+  border-radius: 999px;
+  border: 2px solid var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green);
+}
+
